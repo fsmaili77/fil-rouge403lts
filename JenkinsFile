@@ -20,15 +20,15 @@ pipeline {
         stage('Test') {
             steps {
                 sh """
-                    docker rm -f spring
+                    sudo docker rm -f spring
                     cd notesApp/
-                    docker build -t spring-orm .
+                    sudo docker build -t spring-orm .
 
-                    docker run -p 8080:8080 -d --name spring spring-orm
+                    sudo docker run -p 8080:8080 -d --name spring spring-orm
 
                     echo test
 
-                    docker stop spring
+                    sudo docker stop spring
                 """
             }
         }
