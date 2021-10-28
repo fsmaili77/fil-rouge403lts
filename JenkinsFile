@@ -7,8 +7,13 @@ pipeline {
         stage('Build') {
             steps {
                 sh """
+                    cd gestionnairenotes/
                     npm i
                     npm run build
+
+                    cd ..
+                    cd notesApp
+                    mvn package
                 """
             }
         }
