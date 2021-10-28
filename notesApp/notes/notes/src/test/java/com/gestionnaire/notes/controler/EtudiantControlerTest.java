@@ -22,49 +22,49 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 @WebMvcTest(EtudiantControler.class)
 class EtudiantControlerTest {
+//
+//    @Autowired
+//    MockMvc mockMvc;
+//    @MockBean
+//    EtudiantService etudiantService;
+//    @MockBean
+//    NoteService noteService;
+//
+//
+//    @MockBean
+//    EtudiantDao etudiantDao;
+//
+//    @Test
+//    void getMoyForEtudiant() throws Exception {
+//        Etudiant etudiantValue = new Etudiant();
+//        etudiantValue.setId(2);
+//        etudiantValue.setPrenom("Kylian");
+//        *//*when(etudiantDao.findEtudiantById(1))
+//            .thenReturn()*//*
+//        when(etudiantService.getMoyForEtudiant(2))
+//            .thenReturn(13.33);
+//
+//        mockMvc.perform(get("/Etudiants/{id}/moy"))
+//            .andDo(print())
+//            .andExpect(status().isOk())
+//            *//*.andExpect(content().contentType(equalTo(1)))*//*;
+//        verify(etudiantService).getMoyForEtudiant(1);
 
-    @Autowired
-    MockMvc mockMvc;
-    @MockBean
-    EtudiantService etudiantService;
-    @MockBean
-    NoteService noteService;
-
-
-    @MockBean
-    EtudiantDao etudiantDao;
-
-    @Test
-    void getMoyForEtudiant() throws Exception {
-        /*Etudiant etudiantValue = new Etudiant();
-        etudiantValue.setId(2);
-        etudiantValue.setPrenom("Kylian");
-        *//*when(etudiantDao.findEtudiantById(1))
-            .thenReturn()*//*
-        when(etudiantService.getMoyForEtudiant(2))
-            .thenReturn(13.33);
-
-        mockMvc.perform(get("/Etudiants/{id}/moy"))
-            .andDo(print())
-            .andExpect(status().isOk())
-            *//*.andExpect(content().contentType(equalTo(1)))*//*;
-        verify(etudiantService).getMoyForEtudiant(1);*/
-
-    }
-
-    @Test
-    void getMoyGenerale() {
-    }
-
-    @Test
-    void getMoyenneGeneraleClasse() {
-    }
-
-    @Test
-    void getAllMoyenneForEtudiant() {
-    }
-
-    @Test
-    void getMoyenneOfClasseForMatiere() {
-    }
+//    }
+//
+//    @Test
+//    void getMoyGenerale() {
+//    }
+//
+//    @Test
+//    void getMoyenneGeneraleClasse() {
+//    }
+//
+//    @Test
+//    void getAllMoyenneForEtudiant() {
+//    }
+//
+//    @Test
+//    void getMoyenneOfClasseForMatiere() {
+//    }
 }
