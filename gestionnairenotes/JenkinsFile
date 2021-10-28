@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    triggers {
+        pollSCM('* * * * *')
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh """
+                    npm i
+                    npm run build
+                """
+            }
+        }
+        stage('Test') {
+            steps {
+                sh """
+                    echo test
+                """            
+            }
+        }
+        
+        stage('Deploy') {
+            steps { 
+                sh """
+
+                """         
+            }
+        }
+    }
+}
+

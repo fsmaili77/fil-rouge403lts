@@ -1,0 +1,185 @@
+<!-- <style>
+    body {
+        width: 120%;      
+        
+    }
+    .row {
+        margin-left:-5px;
+        margin-right:-5px;
+    }
+    .column {
+        float: left;
+        width: 50%;
+        padding: 5px;
+    }
+    /* Clearfix (clear floats) */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        background-color: lightgray;
+    }
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    tr {
+        border: 1px solid #ddd
+    }
+</style>
+
+
+<body>
+
+<h2>Bulletin de notes</h2>
+
+<div class="container">
+
+<div class="row">
+    <div class="column">
+        <table >
+            <tr *ngFor="let etudiant of etudiants">
+                <th>Etudiant : {{ etudiant.nom}} {{ etudiant.nom}}</th>
+            </tr>
+        </table>
+    </div>
+    <div class="column">
+        <table>
+            <tr>
+                <th>Collège : Jean Macé</th>
+            </tr>
+            
+            <tr>
+                <td>Etudiant: <b>Moyenne Generale [ 12 ]</b></td>
+            </tr>
+            <tr>
+                <td>Classe: <b>Moyenne Generale [ 14 ]</b></td>
+            </tr>
+            <tr>
+                <td>Année scolaire : 2021 / 2022</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div >
+    <table  class="table">
+        <thead class="thead">
+        <tr>                
+            <th>Matieres</th>  
+            <td></td>
+            <td></td>
+            <th>Notes</th>   
+            <td></td>
+            <td></td>           
+        </tr>
+        </thead>
+        <tbody>
+        <tr>               
+            <td></td>
+            <td><i>Écrit</i></td>
+            <td><i>Oral</i></td>
+            <td><i>Moyenne / Matière</i></td>
+            <td><i>Moyenne / Classe</i></td>              
+            
+        </tr>
+        <tr  *ngFor="let note of notes">
+            <td>{{ note.nomMatiere }}</td>
+            <td>{{ note.noteEcrit }}</td>
+            <td>{{ note.noteOral }}</td>
+            <td>{{ note.noteMoyenne }}</td>
+            <td > Classe</td> 
+        </tr>
+        </tbody>
+       
+        
+
+    </table>
+</div>
+</div> -->
+<div class="container">
+    <div class="etudiant">
+        <div class="row">
+            <div class="col-lg-12 card card-header">
+                <h5>Bulletin de l'étudiant :</h5>
+                <div class="card-header">
+                    <h4>{{noteObjectEtudiant.etudiant.nom}}, {{noteObjectEtudiant.etudiant.prenom}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="border-width: 2px; border-color: black; border-style: solid; border-top: 0px; border-right: 0px; border-left: 0px;">
+            <div class="col-lg-3 card card-header">
+               <b>Matière :</b>  
+            </div>
+            <div class="col-lg-3 card card-header">
+                Oral :
+            </div>
+            <div class="col-lg-3 card card-header">
+                Écrit : 
+            </div>
+            <div class="col-lg-3 card card-header">
+                Moyenne :
+            </div>
+        </div>
+        <div class="row" *ngFor="let note of noteObjectEtudiant.notesList">
+            <div class="col-lg-3 card card-header">
+                {{note.nomMatiere}}
+            </div>
+            <div class="col-lg-3 card card-header">
+                {{note.noteOral}}
+            </div>
+            <div class="col-lg-3 card card-header">
+                {{note.noteEcrit}}
+            </div>
+            <div class="col-lg-3 card card-header">
+                {{note.noteMoyenne}}
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-lg-6">
+            
+            </div>
+            <div class="col-lg-3 card card-header">
+                <b>Moyenne Générale :</b> 
+            </div>
+            <div class="col-lg-3 card card-header">
+                <b>{{noteObjectEtudiant.moyennGlobale}}</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9 card card-header">
+                <b>Moyenne Générale de la classe :</b>
+            </div>
+            <div class="col-lg-3 card card-header">
+                <b>{{moyenneGeneraleClasse}}</b>
+            </div>
+        </div>
+        <div class="col-lg-12 card card-header" style="border-width: 2px; border-color: black; border-style: solid; border-top: 0px; border-right: 0px; border-left: 0px;"><br>
+            <b>Moyenne de la classe par matière :</b><br>
+            <div class="row" *ngFor="let moyenneClasse of moyennesClasses">
+                <div class="col-lg-6">
+                     {{moyenneClasse.nomMatiere}}
+                </div>
+                <div class="col-lg-6 card card-header">
+                    <b> {{moyenneClasse.moyenne}}</b>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-lg-6 card card-header">
+                    <b>Moyenne Générale de la classe :</b>
+                </div>
+                <div class="col-lg-6 card card-header">
+                    <b>{{moyenneGeneraleClasse}}</b>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+
