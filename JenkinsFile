@@ -13,7 +13,6 @@ pipeline {
 
                     cd ..
                     cd notesApp/notes/notes
-                    ls
                     mvn package
                 """
             }
