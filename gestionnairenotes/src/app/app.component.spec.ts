@@ -30,7 +30,7 @@ describe('AppComponent', () => {
   });
   it('should get notes', (done) => {
     http.get(`${url}/note/all`).subscribe((res: any) => {
-      expect(res.length).toBe(36);
+      expect(res.length).toBe(6);
       done()
     })
   });
